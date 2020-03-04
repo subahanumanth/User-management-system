@@ -106,7 +106,7 @@ class validate {
              }
              for($i = 0; $i<count($this->correctDetails['areaOfIntrest']); $i++) {
                  $areaOfIntrest = $this->correctDetails['areaOfIntrest'][$i];
-                 $areaOfIntrestQuery = "insert into  area_of_intrest (user_id,  area_of_intrest) values('$id', '$areaOfIntrest')";
+                 $areaOfIntrestQuery = "insert into  area_of_intrest1 (user_id,  area_of_intrest) values('$id', '$areaOfIntrest')";
                  mysqli_query($connection, $areaOfIntrestQuery);
              }
         }

@@ -12,31 +12,15 @@ First Name : <input type="text" name="firstName" value="<?php if(isset($_POST['s
 Last Name : <input type="text" name="lastName" value="<?php if(isset($_POST['submit'])) {echo $_POST['lastName'];} ?>"><?php echo $error['lastError']; ?><br><br>
 Email : <?php include "email.php"; ?> <?php echo $error['emailError']; ?> <br><br>
 Mobile No : <?php include "mobileNo.php"; ?><?php echo $error['mobileError']; ?><br><br>
-Area Of Intrest :
-<select id="areaOfIntrest" name="areaOfIntrest[]" value="" multiple>
-<option value="C" <?php if(in_array("C",$_POST['areaOfIntrest'])) {echo "selected";} ?>>C</option>
-<option value="C++" <?php if(in_array("C++",$_POST['areaOfIntrest'])) {echo "selected";} ?>>C++</option>
-<option value="Python" <?php if(in_array("Python",$_POST['areaOfIntrest'])) {echo "selected";} ?>>Python</option>
-<option value="PHP" <?php if(in_array("PHP",$_POST['areaOfIntrest'])) {echo "selected";} ?>>PHP</option>
-<option value="Java" <?php if(in_array("Java",$_POST['areaOfIntrest'])) {echo "selected";} ?>>Java</option>
-</select><?php echo $error['areaOfIntrestError']; ?><br><br>
+Area Of Intrest :<?php include("areaOfIntrest.php"); ?><?php echo $error['areaOfIntrestError']; ?><br><br>
 Date Of Birth : <input type="date" id="date" name="date" value="<?php if(isset($_POST['date'])) { echo $_POST['date'];} ?>"><?php echo $error['dateError']; ?><br><br>
-Details Of Graduation : <input type="text" id="detailsOfGraduation" name="detailsOfGraduation" value="<?php if(isset($_POST['submit'])) {echo $_POST['detailsOfGraduation'];} ?>"><?php echo $error['detailsOfGraduationError']; ?><br><br>
+Details Of Graduation : <?php include("detailsOfGraduation.php"); ?><?php echo $error['detailsOfGraduationError']; ?><br><br>
 Blood Group : 
-<select id="bloodGroup" name="bloodGroup">
-<option value="">select</option>
-<option value="B+ve"  <?php if(isset($_POST['bloodGroup']) and $_POST['bloodGroup'] == "B+ve") {echo "selected";} ?>>B+ve</option>
-<option value="A+ve" <?php if(isset($_POST['bloodGroup']) and $_POST['bloodGroup'] == "A+ve") {echo "selected";} ?>>A+ve</option>
-<option value="AB+ve" <?php if(isset($_POST['bloodGroup']) and $_POST['bloodGroup'] == "AB+ve") {echo "selected";} ?>>AB+ve</option>
-<option value="AB-ve" <?php if(isset($_POST['bloodGroup']) and $_POST['bloodGroup'] == "AB-ve") {echo "selected";} ?>>AB-ve</option>
-<option value="O+ve" <?php if(isset($_POST['bloodGroup']) and $_POST['bloodGroup'] == "O+ve") {echo "selected";} ?>>O+ve</option>
-</select><?php echo $error['bloodGroupError']; ?><br><br>
+<?php include('bloodGroup.php'); ?><?php echo $error['bloodGroupError']; ?><br><br>
 Gender : 
-<select id="gender" name="gender">
-<option value="">select</option>
-<option value="male" <?php if(isset($_POST['gender']) and $_POST['gender'] == "male") {echo "selected";} ?>>Male</option>
-<option value="female"  <?php if(isset($_POST['gender']) and $_POST['gender'] == "female") {echo "selected";} ?>>Female</option>
-</select><?php echo $error['genderError']; ?><br><br>
+
+<input type="radio" id="gender" name="gender" value="male" <?php if(isset($_POST['gender']) and $_POST['gender'] == "male") {echo "checked";} ?>>Male
+<input type="radio" id="gender" name="gender" value="female" <?php if(isset($_POST['gender']) and $_POST['gender'] == "female") {echo "checked";} ?>>Female<?php echo $error['genderError']; ?><br><br>
 Profile Picture : 
 <input type="file" name="profile"><br><br>
 Password : <input type="password" name="password"><br><br>
@@ -79,3 +63,5 @@ Password : <input type="password" name="password"><br><br>
 
 
  </script>
+
+
